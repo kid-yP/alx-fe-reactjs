@@ -1,12 +1,12 @@
 import React from 'react';
 
+function MainContent(props) {
+  return (
+    <main style={{ padding: '20px', margin: '20px auto', backgroundColor: '#f0f8ff', borderRadius: '8px', width: '80%', textAlign: 'justify' }}>
+      {props.children}
+      <p>I love to visit New York, Paris, and Tokyo.</p>
+    </main>
+  );
+}
 
-const MainContent = () => {
-    return (
-      <main style={{ padding: '20px', backgroundColor: '#f0f0f0' }}>
-        <h2 style={{ color: 'darkgreen' }}>Welcome to My Favorite Cities</h2>
-        <p style={{ color: 'darkgreen' }}>Here you can find information about various cities.</p>
-      </main>
-    );
-  };
-  export default MainContent;
+export default MainContent;
