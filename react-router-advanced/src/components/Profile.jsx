@@ -1,19 +1,25 @@
-// src/components/Profile.jsx
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import ProfileDetails from './ProfileDetails';
-import ProfileSettings from './ProfileSettings';
+import React from "react";
+import { Route, Routes, Link } from "react-router-dom";
+
+const ProfileDetails = () => <h2>Profile Details</h2>;
+const ProfileSettings = () => <h2>Profile Settings</h2>;
 
 const Profile = () => {
   return (
     <div>
-      <h2>Profile Page</h2>
+      <h1>Profile</h1>
       <nav>
-        <Link to="details">Profile Details</Link>
-        <Link to="settings">Profile Settings</Link>
+        <ul>
+          <li>
+            <Link to="">Details</Link>
+          </li>
+          <li>
+            <Link to="settings">Settings</Link>
+          </li>
+        </ul>
       </nav>
       <Routes>
-        <Route path="details" element={<ProfileDetails />} />
+        <Route path="" element={<ProfileDetails />} />
         <Route path="settings" element={<ProfileSettings />} />
       </Routes>
     </div>
