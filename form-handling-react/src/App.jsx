@@ -1,6 +1,6 @@
-// src/App.jsx
+// src/App.js
 import React from 'react';
-import FormikForm from './components/FormikForm';
+import FormikForm from './components/formikForm'; // Ensure the path is correct
 
 const App = () => {
   return (
