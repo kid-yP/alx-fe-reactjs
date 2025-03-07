@@ -5,8 +5,8 @@ import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
-import FavoritesList from './components/FavoritesList'; // Ensure this is included
-import RecommendationsList from './components/RecommendationsList'; // Ensure this is included
+//import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 const App = () => {
   return (
@@ -15,11 +15,10 @@ const App = () => {
         <h1>Recipe Sharing App</h1>
         <SearchBar />
         <AddRecipeForm />
-        <Routes>
+        <Routes>    
           <Route path="/" element ={<RecipeList />} />
           <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
         </Routes>
-        <FavoritesList /> {/* Ensure this is rendered */}
         <RecommendationsList /> {/* Ensure this is rendered */}
       </div>
     </Router>
