@@ -18,10 +18,10 @@ const Search = () => {
     setUserData(null);
 
     try {
-      const data = await fetchUserData(username);
+      const data = await fetchUserData(username); // Call the API function
       setUserData(data);
     } catch (err) {
-      setError("Looks like we can't find the user");
+      setError("Looks like we can't find the user"); // Error message
     } finally {
       setLoading(false);
     }
@@ -47,8 +47,8 @@ const Search = () => {
       {error && <p className="text-red-500">{error}</p>}
       {userData && (
         <div className="mt-4">
-          <h2 className="text-xl font-bold">{userData.name}</h2>
-          <img src={userData.avatar_url} alt={userData.name} className="w-24 h-24 rounded-full" />
+          <h2 className="text-xl font-bold">{userData.name || userData.login}</h2> {/* Display name or login */}
+          <img src={userData.avatar_url} alt={userData.name || userData.login} className="w-24 h-24 rounded-full" />
           <p>
             <a href={userData.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
               View Profile
