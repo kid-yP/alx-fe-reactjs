@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { fetchUserData } from '../services/githubService';
+import { fetchUser Data } from '../services/githubService'; // Ensure the function name is correct
 
 const Search = () => {
   const [username, setUsername] = useState('');
-  const [userData, setUserData] = useState(null);
+  const [userData, setUser Data] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -15,13 +15,13 @@ const Search = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
-    setUserData(null);
+    setUser Data(null);
 
     try {
-      const data = await fetchUserData(username);
-      setUserData(data);
+      const data = await fetchUser Data(username); // Correct function name
+      setUser Data(data);
     } catch (err) {
-      setError("Looks like we can't find the user");
+      setError("Looks like we can't find the user"); // Error message
     } finally {
       setLoading(false);
     }
@@ -47,8 +47,8 @@ const Search = () => {
       {error && <p className="text-red-500">{error}</p>}
       {userData && (
         <div className="mt-4">
-          <h2 className="text-xl font-bold">{userData.name}</h2>
-          <img src={userData.avatar_url} alt={userData.name} className="w-24 h-24 rounded-full" />
+          <h2 className="text-xl font-bold">{userData.login}</h2> {/* Displaying the login property */}
+          <img src={userData.avatar_url} alt={userData.login} className="w-24 h-24 rounded-full" />
           <p>
             <a href={userData.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
               View Profile
